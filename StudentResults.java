@@ -35,18 +35,21 @@ public class StudentResults {
 	
 	static void prepareStudentData() {
 		
+		String[] courseNames = {"IT","CSE","CIVIL","Mechanical"};
+		
+		
 		for(int i=0;i<=499;i++) {
 			int max=100,min=0,feeMax=75000,feeMin=5000;
-				
+			String course =  	courseNames[(int)(Math.random() * (3 - 0 + 1) +min)];
 			int fee = (int)(Math.random() * (feeMax - feeMin + 1) + min); 
 			int maths = (int)(Math.random() * (max - min + 1) + min); 
 			int sci = (int)(Math.random() * (max - min + 1) + min); 
 			int eng = (int)(Math.random() * (max - min + 1) + min); 
 			
-			students[i]= new Student("student"+(i+1),"CSE",
+			students[i]= new Student("student"+(i+1),course,
 					fee,maths,sci,eng);
 			
-			
+		//System.out.println(students[i]);	
 		}
 		
 		
